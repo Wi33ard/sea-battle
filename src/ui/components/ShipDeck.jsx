@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { unitSize } from '../../utilities/consts';
 
 
 export default function ShipDeck({ shipId, deckId }) {
@@ -9,12 +10,15 @@ export default function ShipDeck({ shipId, deckId }) {
       // className="shipDeck"
       style={{
         position: "absolute",
-        width: "2rem",
-        height: "2rem",
-        top: shipId + "rem",
-        left: deckId + "rem",
+        width: unitSize+"rem",
+        height: unitSize+"rem",
+        top: 0,
+        left: deckId*unitSize + "rem",
         backgroundColor: alive ? "blue" : "red",
+        border: 'solid 0.2px gray'
       }}
-    />
+    >
+      deck id: {deckId}
+    </div>
   );
 }
